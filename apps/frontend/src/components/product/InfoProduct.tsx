@@ -1,5 +1,5 @@
 'use client'
-import { IProduct, products } from '@gstore/core'
+import { IProduct } from '@gstore/core'
 import Image from 'next/image'
 import Especification from './Especification'
 

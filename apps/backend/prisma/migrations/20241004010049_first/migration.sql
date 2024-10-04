@@ -2,7 +2,7 @@
 CREATE TABLE "Product" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "descripition" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
     "brand" TEXT NOT NULL,
     "model" TEXT NOT NULL,
     "image" TEXT NOT NULL,

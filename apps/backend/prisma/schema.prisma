@@ -31,4 +31,46 @@ model Product {
   averagePrice Float
 
   especifications Json
+
+  items OrderItems[]
+
+  @@map("products")
+}
+
+model Order {
+  id         Int      @id @default(autoincrement())
+  date       DateTime
+  totalValue Float
+  status     String
+  payment    String
+
+  shipping   Shipping @relation(fields: [shippingId], references: [id])
+  shippingId Int      @unique
+
+  items OrderItems[]
+}
+
+model OrderItems {
+  id       Int   @id @default(autoincrement())
+  quantity Int
+  price    Float
+
+  order   Order @relation(fields: [orderId], references: [id])
+  orderId Int
+
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+}
+
+model Shipping {
+  id                Int    @id @default(autoincrement())
+  name              String
+  email             String
+  cpf               String
+  address           String
+  addressComplement String
+  city              String
+  state             String
+
+  order Order?
 }

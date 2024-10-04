@@ -1,0 +1,43 @@
+GET http://localhost:3005/order
+
+###
+GET http://localhost:3005/order/1
+
+###
+DELETE http://localhost:3005/order/1
+
+###
+POST http://localhost:3005/order
+Content-Type: application/json
+
+{
+    "date": "2021-09-01T00:00:00.000Z",
+    "totalValue": 200.00,
+    "status": "RECEIVED",
+    "payment": "PIX",
+    "shipping": {
+        "name": "Fulano",
+        "email": "fulano@email.com",
+        "cpf": "123.456.789-00",
+        "address": "Rua dos Bobos, 0",
+        "addressComplement": "Apto 101",
+        "city": "São Paulo",
+        "state": "SP"
+    },
+    "items": [
+        {
+            "quantity": 1,
+            "price": 100.00,
+            "product": {
+                "id": 1
+            }
+        },
+        {
+            "quantity": 1,
+            "price": 100.00,
+            "product": {
+                "id": 2
+            }
+        }
+    ]
+}

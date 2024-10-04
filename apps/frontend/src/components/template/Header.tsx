@@ -1,10 +1,12 @@
+'use client'
 import Logo from "../shared/Logo";
 import IconCart from "../shared/IconCart";
 import Link from "next/link";
+import useCart from "@/data/hooks/useCart";
 
 export default function Header() {
-    //const { qtyItems } = IconCart({ qtyItems: 0 })
-    const qtyItems = 0
+    const { qtyItems } = useCart()
+
     return (   <div
         className="flex flex-col h-20"
         style={{

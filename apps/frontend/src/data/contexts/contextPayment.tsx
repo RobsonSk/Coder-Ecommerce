@@ -63,7 +63,7 @@ export function ProviderPayment(props: any) {
 
         await httpPost('/order', order)
         clearCart()
-        router.push('/checkout/sucesso')
+        router.push('/checkout/sucess')
     }
 
     useEffect(() => {

@@ -1,7 +1,8 @@
 import { IProduct } from "../product";
 import ICartItems  from "./itemCart";
+
 export default class Cart {
-    constructor(public items: ICartItems[] = []) {}
+    constructor(readonly items: ICartItems[] = []) {}
 
     addItem(product: IProduct): Cart {
         const item = this.itemQtyProduct(product);
@@ -12,7 +13,9 @@ export default class Cart {
         }
     }
 
+
     removeItem(product: IProduct) {
+        console.log('removeItem', product)
         const item = this.itemQtyProduct(product);
         if (!item) return this
 
@@ -20,6 +23,7 @@ export default class Cart {
     }
 
     removeProduct(product: IProduct) {
+        console.log('removeProduct', product)
         const item = this.itemQtyProduct(product);
         if (!item) return this
         return new Cart(this.items.filter((item) => item.product.id !== product.id));
@@ -49,8 +53,15 @@ export default class Cart {
         return this.items.find((item) => item.product.id === product.id);
     }
 
-    private changeQtyItem(items: ICartItems[], product: IProduct, qty: number): ICartItems[] {
-        return items.map((item) => item.product.id === product.id ? { ...item, quantity: item.quantity + qty } : item)
+    private changeQtyItem(
+        items: ICartItems[],
+        product: IProduct, 
+        qty: number
+    ): ICartItems[] {
+        console.log('changeQtyItem', items, product, qty)
+        return items
+        .map((item) => 
+            item.product.id === product.id ? { ...item, quantity: item.quantity + qty } : item)
         .filter((item) => item.quantity > 0);
     }
 };

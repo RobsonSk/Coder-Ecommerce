@@ -1,11 +1,11 @@
 'use client'
-
+import useProduct from '@/data/hooks/useProduct'
 import ItemProduct from './ItemProduct'
 import NotFoundProduct from './NotFoundProduct'
-import useProduct from '@/data/hooks/useProduct'
 
 export default function ListProduct() {
     const { products } = useProduct()
+    console.log(products)
     return products.length ? (
         <div
             className="
@@ -13,7 +13,7 @@ export default function ListProduct() {
             "
         >
             {products.map((product) => (
-                <ItemProduct products={product} key={product.id} />
+                <ItemProduct product={product} key={product.id} />
             ))}
         </div>
     ) : (

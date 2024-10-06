@@ -18,7 +18,7 @@ export function ProviderProducts(props: any) {
     const [products, setProducts] = useState<IProduct[]>([])
 
     const loadProducts = useCallback(async () => {
-        const products = await httpGet('/products')
+        const products = await httpGet('/product')
         setProducts(products ?? [])
     }, [httpGet])
 

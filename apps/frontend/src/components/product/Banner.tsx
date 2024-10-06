@@ -43,7 +43,7 @@ export default function BannerCompra(props: BannerCompraProps) {
                     className="flex-1 button bg-violet-700"
                     onClick={() => {
                          addItem(product)
-                        router.push('/checkout/pagamento')
+                        router.push('/checkout/payment')
                     }}
                 >
                     <IconCreditCard size={20} />

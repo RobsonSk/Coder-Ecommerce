@@ -16,7 +16,7 @@ export default function Header() {
         <div className="flex-1 container flex flex-col justify-center">
             <div className="flex justify-between items-center">
                 <Logo />
-                <Link href="/checkout/carrinho">
+                <Link href="/checkout/cart">
                     <IconCart qtyItems={qtyItems} />
                 </Link>
             </div>

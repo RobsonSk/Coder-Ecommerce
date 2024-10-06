@@ -3,8 +3,7 @@ import { ProviderCart } from "@/data/contexts/contextCart";
 import { ProviderPayment } from "@/data/contexts/contextPayment";
 import { ProviderProducts } from "@/data/contexts/contextProduct";
 export default function Layout(props: any) {
-    return
-    (
+    return    (
         <ProviderProducts>
             <ProviderCart>
                 <ProviderPayment>
